@@ -1,0 +1,24 @@
+.cover{
+  border-radius:26px; overflow:hidden; min-height: 280px;
+  background-size: cover; background-position:center;
+  position:relative;
+}
+.cover::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(16,24,40,.12), rgba(16,24,40,.55));
+}
+.cover .inner{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:18px;
+  color:white;
+  z-index:2;
+}
+.meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+.cols{
+  display:grid; grid-template-columns: 1.1fr .9fr; gap:16px; margin-top:16px;
+}
+@media(max-width: 900px){ .cols{grid-template-columns:1fr} }
+.gallery{display:grid; grid-template-columns: repeat(2, 1fr); gap:12px}
+.gallery img{border-radius:18px; border:1px solid var(--border); box-shadow:var(--shadow-soft)}

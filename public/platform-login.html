@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Platform Login — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin-login.css">
+</head>
+<body>
+  <header class="top">
+    <div class="container nav">
+      <a class="brand" href="index.html">FoodieQR</a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="scan.html">Scan</a>
+        <a href="admin-login.html">Hotel Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="max-width:720px;padding-top:26px">
+    <div class="card">
+      <h1 class="h2">Platform Owner Login</h1>
+      <p class="smallmuted">This is for you (super admin) to monitor all hotels.</p>
+
+      <form id="loginForm" class="form" autocomplete="on">
+        <label class="label">Email</label>
+        <input id="email" class="input" type="email" placeholder="owner@example.com" required>
+
+        <label class="label">Password</label>
+        <input id="password" class="input" type="password" placeholder="••••••••" required>
+
+        <button class="btn" type="submit">Login</button>
+        <p id="msg" class="smallmuted" style="margin-top:12px"></p>
+      </form>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/platform-login.js"></script>
+</body>
+</html>

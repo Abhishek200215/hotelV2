@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Scan QR — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/scan.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Scan QR</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+      <a data-nav="scan" href="scan.html">Scan</a>
+      <a data-nav="demo" href="hotel.html?hotel=hotel-a&table=01">Demo</a>
+      <a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="track" href="track.html">Track</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+<div class="container">
+  <h1 id="hotelTitle">QR Links</h1>
+  <div class="card">
+    <label class="label">Pick Hotel</label>
+    <select class="input" id="hotelPick"></select>
+  </div>
+  <ul id="qrList" class="list"></ul>
+</div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/scan.js"></script>
+</body>
+</html>

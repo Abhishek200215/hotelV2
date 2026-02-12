@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Track Order — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/track.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Tracking</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="track" href="track.html">Track</a>
+      <a data-nav="kitchen" href="kitchen.html?hotel=hotel-a">Kitchen</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="hero">
+    <section class="card pad">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <div>
+          <h1 class="h2" style="font-family:'Playfair Display',serif">Order status</h1>
+          <div class="smallmuted" id="meta">—</div>
+        </div>
+        <button class="btn" id="refresh">Refresh</button>
+      </div>
+
+      <div class="sep"></div>
+
+      <div class="eta">
+        <div>
+          <div class="smallmuted">Estimated time</div>
+          <div class="bigeta" id="eta">—</div>
+        </div>
+        <div>
+          <div class="smallmuted">Order ID</div>
+          <div style="font-weight:900" id="oid">—</div>
+        </div>
+      </div>
+
+      <div class="timeline" id="timeline"></div>
+
+      <div class="sep"></div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" href="kitchen.html?hotel=hotel-a" id="openKitchen">Open Kitchen</a>
+        <a class="btn primary" href="feedback.html" id="feedbackBtn">Leave Feedback</a>
+      </div>
+    </section>
+
+    <aside class="card pad">
+      <div class="h3">Items</div>
+      <div class="sep"></div>
+      <div id="items"></div>
+      <div class="sep"></div>
+      <div id="bill"></div>
+    </aside>
+  </div>
+
+  <div class="card pad" id="empty" style="display:none; margin-top:16px">
+    <div class="h3">No order to track</div>
+    <div class="smallmuted">Place an order from the menu, then come back here.</div>
+    <div class="sep"></div>
+    <a class="btn primary" href="hotel.html?hotel=hotel-a&table=01">Start demo</a>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/track.js"></script>
+</body>
+</html>

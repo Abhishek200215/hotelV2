@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Login — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin-login.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Admin</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="admin" href="admin-login.html">Login</a>
+      <a data-nav="home" href="index.html">Home</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="box card pad">
+    <h1 class="h2" style="font-family:'Playfair Display',serif">Admin login</h1>
+    <p class="smallmuted">Demo only — no real authentication. Pick a hotel and continue.</p>
+    <div class="sep"></div>
+
+    <label class="smallmuted" for="email">Email</label>
+    <input id="email" class="input" placeholder="admin@hotel.com" value="admin@demo.com">
+
+    <div style="height:10px"></div>
+
+    <label class="smallmuted" for="pass">Password</label>
+    <input id="pass" class="input" type="password" placeholder="••••••••" value="demo1234">
+
+    <div style="height:10px"></div>
+
+    <label class="smallmuted" for="hotelSelect">Hotel</label>
+    <select id="hotelSelect" class="input"></select>
+
+    <div class="sep"></div>
+    <button class="btn full primary" id="login">Login</button>
+    <a class="btn full" href="index.html">Back</a>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/admin-login.js"></script>
+</body>
+</html>

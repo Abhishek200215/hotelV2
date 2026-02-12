@@ -1,0 +1,67 @@
+.hero{
+  padding:30px 0 10px;
+}
+.hero-wrap{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:18px;
+  align-items:stretch;
+}
+@media (max-width: 900px){
+  .hero-wrap{grid-template-columns:1fr}
+}
+.hero-card{
+  border-radius: 26px;
+  overflow:hidden;
+  position:relative;
+  min-height: 380px;
+  background: linear-gradient(180deg, rgba(16,24,40,.35), rgba(16,24,40,.1)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1700&q=80');
+  background-size: cover;
+  background-position:center;
+  padding: 22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.hero-card h1{
+  font-family:"Playfair Display", serif;
+  font-size: 44px;
+  margin:0;
+  color:white;
+  letter-spacing:-.4px;
+}
+.hero-card p{color: rgba(255,255,255,.92); max-width: 52ch; margin:10px 0 0}
+.hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+.kpis{display:grid; gap:12px}
+.kpi{
+  padding:18px;
+}
+.kpi .num{font-size:26px; font-weight:800}
+.kpi .lab{color:var(--muted); font-size:13px}
+.section{
+  padding: 14px 0 0;
+}
+.steps{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;
+}
+@media (max-width: 900px){ .steps{grid-template-columns:1fr} }
+.step{
+  padding:16px;
+}
+.step .t{font-weight:800; margin:10px 0 4px}
+.step .d{color:var(--muted); font-size:13px; line-height:1.5}
+.strip{
+  display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:center;
+}
+@media (max-width: 900px){ .strip{grid-template-columns:1fr} }
+.strip img{border-radius:22px; border:1px solid var(--border); box-shadow:var(--shadow-soft)}
+.pricing{
+  display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px;
+}
+@media (max-width: 900px){ .pricing{grid-template-columns:1fr} }
+.price{
+  padding:16px;
+}
+.price .tag{font-weight:800; font-size:20px}
+.price .amt{font-size:34px; font-weight:900; margin:10px 0}
+.price ul{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); line-height:1.7}

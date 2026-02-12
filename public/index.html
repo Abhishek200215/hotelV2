@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FoodieQR — Scan, Order, Smile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html" aria-label="FoodieQR home"><img src="assets/logo.svg" alt="FoodieQR logo" height="30"></a>
+      <span class="badge dot">QR Ordering</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="home" href="index.html">Home</a>
+      <a data-nav="demo" href="hotel.html?hotel=hotel-a&table=01">Live Demo</a>
+      <a data-nav="kitchen" href="kitchen.html?hotel=hotel-a">Kitchen</a>
+      <a data-nav="admin" href="admin-login.html">Admin</a>
+      <a data-nav="platform" href="platform-login.html">Platform</a>
+    </div>
+  </div>
+</header>
+
+<main class="container hero">
+  <div class="hero-wrap">
+    <div class="hero-card card">
+      <h1>Scan. Order. Smile.</h1>
+      <p>Turn any table into a lightning-fast ordering experience. Foodie-first UI, real-time kitchen flow, and a clean admin portal — all in one.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="hotel.html?hotel=hotel-a&table=01">Try Customer Demo</a>
+        <a class="btn" href="scan.html">Scan a QR</a>
+        <a class="btn" href="kitchen.html?hotel=hotel-a">Open Kitchen Demo</a>
+        <a class="btn ghost" href="#how">See How It Works</a>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="card kpi">
+        <div class="num">15 sec</div>
+        <div class="lab">Typical “scan → add → place order”</div>
+        <div class="sep"></div>
+        <div class="smallmuted">Mobile-first, buttery smooth. Built for high conversions.</div>
+      </div>
+      <div class="card kpi">
+        <div class="num">Realtime</div>
+        <div class="lab">Kitchen queue updates instantly</div>
+        <div class="sep"></div>
+        <div class="smallmuted">Status timeline + ETA keeps customers calm and happy.</div>
+      </div>
+      <div class="card kpi">
+        <div class="num">Multi-hotel</div>
+        <div class="lab">One platform for many hotels</div>
+        <div class="sep"></div>
+        <div class="smallmuted">Per-hotel menu, branding, tables, and orders.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="how">
+    <div class="row" style="align-items:baseline; justify-content:space-between; flex-wrap:wrap">
+      <h2 class="h2" style="font-family:'Playfair Display',serif">How it works</h2>
+      <span class="badge">Customer + Kitchen + Admin</span>
+    </div>
+
+    <div class="steps">
+      <div class="card step">
+        <div class="badge dot">Step 1</div>
+        <div class="t">Scan QR on table</div>
+        <div class="d">Table number is auto-detected from URL params like <span class="kbd">?hotel=hotel-a&table=02</span>.</div>
+      </div>
+      <div class="card step">
+        <div class="badge dot">Step 2</div>
+        <div class="t">Browse menu</div>
+        <div class="d">Search, filters, category tabs, and mouth-watering photos.</div>
+      </div>
+      <div class="card step">
+        <div class="badge dot">Step 3</div>
+        <div class="t">Cart + payment</div>
+        <div class="d">Clear bill breakdown (subtotal, tax, discount). Place order in one tap.</div>
+      </div>
+      <div class="card step">
+        <div class="badge dot">Step 4</div>
+        <div class="t">Kitchen receives order</div>
+        <div class="d">New → Preparing → Ready → Delivered, in a simple kanban board.</div>
+      </div>
+      <div class="card step">
+        <div class="badge dot">Step 5</div>
+        <div class="t">Live tracking</div>
+        <div class="d">Customer sees status changes + ETA updates in realtime.</div>
+      </div>
+      <div class="card step">
+        <div class="badge dot">Step 6</div>
+        <div class="t">Feedback</div>
+        <div class="d">Collect ratings and comments after delivery. Simple, clean, fast.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="strip">
+      <div>
+        <h2 class="h2" style="font-family:'Playfair Display',serif">Made for foodie lovers.</h2>
+        <p class="smallmuted">Elegant typography, warm palette, soft shadows, and photos that make people hungry. This is a UI demo using only HTML/CSS/JS.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn primary" href="hotel.html?hotel=hotel-a&table=05">Open Demo (Table 05)</a>
+          <a class="btn" href="admin.html?hotel=hotel-a">Admin Portal</a>
+        </div>
+      </div>
+      <img alt="Food preview" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1400&q=80">
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="row" style="align-items:baseline; justify-content:space-between; flex-wrap:wrap">
+      <h2 class="h2" style="font-family:'Playfair Display',serif">Pricing (demo)</h2>
+      <span class="smallmuted">Replace with real plans later</span>
+    </div>
+
+    <div class="pricing">
+      <div class="card price">
+        <div class="tag">Starter</div>
+        <div class="amt">₹999<span class="smallmuted">/mo</span></div>
+        <ul>
+          <li>Up to 15 tables</li>
+          <li>Menu management</li>
+          <li>Basic order tracking</li>
+        </ul>
+        <div class="sep"></div>
+        <a class="btn full primary" href="admin-login.html">Start</a>
+      </div>
+      <div class="card price" style="border-color: rgba(255,107,53,.45)">
+        <div class="tag">Growth</div>
+        <div class="amt">₹1999<span class="smallmuted">/mo</span></div>
+        <ul>
+          <li>Up to 40 tables</li>
+          <li>Kitchen dashboard</li>
+          <li>Discounts & analytics (demo)</li>
+        </ul>
+        <div class="sep"></div>
+        <a class="btn full primary" href="admin-login.html">Start</a>
+      </div>
+      <div class="card price">
+        <div class="tag">Multi-Hotel</div>
+        <div class="amt">₹4999<span class="smallmuted">/mo</span></div>
+        <ul>
+          <li>Multiple branches</li>
+          <li>Branding per hotel</li>
+          <li>Priority support (demo)</li>
+        </ul>
+        <div class="sep"></div>
+        <a class="btn full primary" href="admin-login.html">Start</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px">
+          <img src="assets/logo.svg" alt="" height="26">
+          <span class="badge">Front-end Demo</span>
+        </div>
+        <p class="smallmuted">Built using only HTML, CSS, and JavaScript. Data + realtime simulated using localStorage.</p>
+      </div>
+      <div>
+        <div class="h3">Demo</div>
+        <div class="smallmuted" style="display:grid; gap:8px; margin-top:10px">
+          <a href="hotel.html?hotel=hotel-a&table=01">Customer flow</a>
+          <a href="kitchen.html?hotel=hotel-a">Kitchen</a>
+          <a href="admin.html?hotel=hotel-a">Admin portal</a>
+        </div>
+      </div>
+      <div>
+        <div class="h3">Quick links</div>
+        <div class="smallmuted" style="display:grid; gap:8px; margin-top:10px">
+          <a href="menu.html?hotel=hotel-a&table=01">Menu</a>
+          <a href="track.html">Track last order</a>
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/index.js"></script>
+</body>
+</html>

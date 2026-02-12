@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Platform Dashboard — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
+  <header class="top">
+    <div class="container nav">
+      <a class="brand" href="index.html">FoodieQR</a>
+      <nav class="links">
+        <a href="scan.html">Scan</a>
+        <a href="admin-login.html">Hotel Admin</a>
+        <button id="logoutBtn" class="btn small" type="button">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:22px">
+    <div class="grid">
+      <section class="card">
+        <h2 class="h2">Platform Overview</h2>
+        <div class="kpis" id="kpis"></div>
+      </section>
+
+      <section class="card">
+        <h2 class="h2">Hotels</h2>
+        <div class="row">
+          <input id="hotelSearch" class="input" placeholder="Search hotel name/slug" />
+          <button id="refreshBtn" class="btn" type="button">Refresh</button>
+        </div>
+        <div class="tableWrap">
+          <table class="table" id="hotelTable">
+            <thead>
+              <tr>
+                <th>Hotel</th>
+                <th>Slug</th>
+                <th>Phone</th>
+                <th>Orders</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row" style="justify-content:space-between">
+          <h2 class="h2" style="margin:0">Recent Orders</h2>
+          <select id="statusFilter" class="input" style="max-width:200px">
+            <option value="">All</option>
+            <option value="NEW">NEW</option>
+            <option value="PREPARING">PREPARING</option>
+            <option value="READY">READY</option>
+            <option value="DELIVERED">DELIVERED</option>
+            <option value="CANCELLED">CANCELLED</option>
+          </select>
+        </div>
+        <div class="tableWrap">
+          <table class="table" id="orderTable">
+            <thead>
+              <tr>
+                <th>When</th>
+                <th>Hotel</th>
+                <th>Table</th>
+                <th>Status</th>
+                <th>Total (₹)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/platform.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hotel — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hotel.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Customer</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="demo" href="hotel.html?hotel=hotel-a&table=01">Demo</a>
+      <a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="track" href="track.html">Track</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding-top:22px">
+  <div class="cover card" id="cover">
+    <div class="inner">
+      <div class="badge dot" id="tableBadge">Table 01</div>
+      <h1 class="h1" style="font-family:'Playfair Display',serif; margin-top:10px" id="hotelName">Hotel</h1>
+      <div class="meta">
+        <span class="badge" id="ratingBadge">⭐ 4.5</span>
+        <span class="badge" id="timingBadge">⏰</span>
+        <span class="badge" id="addrBadge">📍</span>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+        <a class="btn primary" id="startBtn" href="#">Start Ordering</a>
+        <a class="btn" id="openMenuBtn" href="#">Open Menu</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card pad">
+      <h2 class="h2" style="font-family:'Playfair Display',serif">Today’s highlights</h2>
+      <p class="smallmuted">A few bestsellers to tempt you. (Dummy data; replace later.)</p>
+      <div id="highlights" class="grid" style="grid-template-columns: repeat(2, 1fr)">
+      </div>
+    </div>
+    <div class="card pad">
+      <h2 class="h2" style="font-family:'Playfair Display',serif">Why people love this</h2>
+      <div class="sep"></div>
+      <div class="grid">
+        <div class="card pad" style="background:rgba(255,107,53,.06); border-color: rgba(255,107,53,.20)">
+          <div class="h3">Fast ordering</div>
+          <div class="smallmuted">No waiting. Clear photos, quick cart, simple payment.</div>
+        </div>
+        <div class="card pad" style="background:rgba(46,196,182,.06); border-color: rgba(46,196,182,.20)">
+          <div class="h3">Live updates</div>
+          <div class="smallmuted">Kitchen status updates show on your phone instantly.</div>
+        </div>
+        <div class="card pad">
+          <div class="h3">Easy feedback</div>
+          <div class="smallmuted">Rate your meal after delivery — helps the hotel improve.</div>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <a class="btn full" href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="smallmuted">Tip: Change the URL table number, e.g. <span class="kbd">?hotel=hotel-a&table=07</span></div>
+  </footer>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/hotel.js"></script>
+</body>
+</html>

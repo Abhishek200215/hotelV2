@@ -1,0 +1,7 @@
+.wrap{margin-top:18px; display:grid; grid-template-columns: 1fr 420px; gap:16px}
+@media(max-width: 980px){ .wrap{grid-template-columns:1fr} }
+.videoCard{overflow:hidden;}
+#preview{width:100%; aspect-ratio: 4/3; background:#0b1220; border-radius:18px}
+.hint{line-height:1.55}
+.kv{display:flex; justify-content:space-between; gap:12px; padding:10px 0; border-bottom:1px solid var(--border)}
+.kv:last-child{border-bottom:none}

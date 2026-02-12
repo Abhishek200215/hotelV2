@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Admin Portal</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="admin" href="admin.html?hotel=hotel-a">Admin</a>
+      <a data-nav="kitchen" href="kitchen.html?hotel=hotel-a">Kitchen</a>
+      <a data-nav="demo" href="hotel.html?hotel=hotel-a&table=01">Customer</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="layout">
+    <aside class="card sidebar">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+        <div>
+          <div class="h3" id="hotelName">Hotel</div>
+          <div class="smallmuted">Manage menu, tables, branding</div>
+        </div>
+      </div>
+      <div class="sep"></div>
+      <nav class="side" id="side">
+        <a href="#menu" data-sec="menu">🍽️ Menu</a>
+        <a href="#categories" data-sec="categories">🧩 Categories</a>
+        <a href="#tables" data-sec="tables">🔳 Tables & QR</a>
+        <a href="#branding" data-sec="branding">🎨 Branding</a>
+        <a href="#payments" data-sec="payments">💳 Payments</a>
+        <a href="#orders" data-sec="orders">📦 Orders</a>
+      </nav>
+      <div class="sep"></div>
+      <a class="btn full" href="admin-login.html">Logout</a>
+    </aside>
+
+    <section class="card section" id="content">
+      <div id="view"></div>
+    </section>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/admin.js"></script>
+</body>
+</html>

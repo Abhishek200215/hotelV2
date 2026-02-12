@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/checkout.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Checkout</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="cart" href="cart.html">Cart</a>
+      <a data-nav="track" href="track.html">Track</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding-top:18px">
+  <div class="wrap">
+    <section class="card pad">
+      <h1 class="h2" style="font-family:'Playfair Display',serif">Payment</h1>
+      <div class="smallmuted" id="ctx">—</div>
+      <div class="sep"></div>
+
+      <div class="grid" id="methods">
+        <div class="card method active" data-method="UPI">
+          <div>
+            <div style="font-weight:900">UPI</div>
+            <div class="smallmuted">Fastest option (demo)</div>
+          </div>
+          <span class="badge">Recommended</span>
+        </div>
+        <div class="card method" data-method="Card">
+          <div>
+            <div style="font-weight:900">Card</div>
+            <div class="smallmuted">Visa / MasterCard (demo)</div>
+          </div>
+          <span class="badge">—</span>
+        </div>
+        <div class="card method" data-method="Cash">
+          <div>
+            <div style="font-weight:900">Cash on counter</div>
+            <div class="smallmuted">Pay after (demo)</div>
+          </div>
+          <span class="badge">Optional</span>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+      <button class="btn full primary" id="payBtn">Pay & Place Order</button>
+      <a class="btn full" href="cart.html">Back to cart</a>
+    </section>
+
+    <aside class="card pad">
+      <div class="h3">Order summary</div>
+      <div class="sep"></div>
+      <div id="summary"></div>
+      <div class="sep"></div>
+      <div class="smallmuted">After placing, open Kitchen demo to update status.</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+        <a class="btn" id="kitchenLink" href="kitchen.html?hotel=hotel-a">Kitchen</a>
+        <a class="btn" href="track.html">Track</a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/checkout.js"></script>
+</body>
+</html>

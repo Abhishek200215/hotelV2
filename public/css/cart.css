@@ -1,0 +1,21 @@
+.wrap{margin-top:18px; display:grid; grid-template-columns: 1fr 380px; gap:16px}
+@media(max-width: 980px){ .wrap{grid-template-columns:1fr} }
+.line{
+  display:flex; gap:12px; align-items:flex-start; justify-content:space-between;
+  padding:12px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.75);
+}
+.line img{width:62px; height:62px; border-radius:16px; object-fit:cover; border:1px solid var(--border)}
+.line .nm{font-weight:900}
+.line .sm{color:var(--muted); font-size:12px; line-height:1.4}
+.qty{
+  display:flex; align-items:center; gap:8px; margin-top:8px;
+}
+.qty button{width:34px; height:34px; border-radius:999px; border:1px solid var(--border); background:white; cursor:pointer; font-weight:900}
+.bill{display:grid; gap:8px}
+.empty{
+  padding:22px;
+  text-align:center;
+}

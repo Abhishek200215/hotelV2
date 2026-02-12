@@ -1,0 +1,12 @@
+.wrap{margin-top:18px; display:grid; grid-template-columns: 1fr 420px; gap:16px}
+@media(max-width: 980px){ .wrap{grid-template-columns:1fr} }
+.stars{display:flex; gap:8px; font-size:30px}
+.star{cursor:pointer; user-select:none; filter: drop-shadow(0 10px 16px rgba(16,24,40,.10))}
+.star.off{opacity:.25}
+.success{
+  display:none;
+  padding:18px;
+  border-radius:18px;
+  border:1px solid rgba(18,183,106,.25);
+  background: rgba(18,183,106,.08);
+}

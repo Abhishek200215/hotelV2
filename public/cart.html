@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cart — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/cart.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Cart</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="cart" href="cart.html">Cart</a>
+      <a data-nav="track" href="track.html">Track</a>
+    </div>
+  </div>
+</header>
+
+<main class="container" style="padding-top:18px">
+  <div class="wrap">
+    <section class="card pad">
+      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <div>
+          <h1 class="h2" style="font-family:'Playfair Display',serif">Your cart</h1>
+          <div class="smallmuted" id="ctx"></div>
+        </div>
+        <a class="btn" id="backToMenu" href="#">Back to menu</a>
+      </div>
+      <div class="sep"></div>
+      <div id="cartLines" class="grid"></div>
+      <div id="emptyState" class="empty card" style="display:none; margin-top:14px">
+        <div class="h3">Cart is empty</div>
+        <div class="smallmuted">Pick something delicious — your future self will thank you.</div>
+        <div class="sep"></div>
+        <a class="btn primary" id="emptyToMenu" href="#">Browse menu</a>
+      </div>
+    </section>
+
+    <aside class="card pad">
+      <div class="h3">Bill summary</div>
+      <div class="smallmuted" id="billHint">—</div>
+      <div class="sep"></div>
+      <div id="bill" class="bill"></div>
+      <div class="sep"></div>
+      <button class="btn full primary" id="proceed">Proceed to Pay</button>
+      <button class="btn full" id="clearCart">Clear cart</button>
+      <div class="sep"></div>
+      <div class="smallmuted">Demo only: payment is simulated. Kitchen dashboard will receive your order.</div>
+    </aside>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/cart.js"></script>
+</body>
+</html>

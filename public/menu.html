@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Menu — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/menu.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Menu</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+      <a data-nav="cart" href="cart.html">Cart</a>
+      <a data-nav="track" href="track.html">Track</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="topbar">
+    <div class="context">
+      <span class="badge dot" id="ctxHotel">Hotel</span>
+      <span class="badge" id="ctxTable">Table 01</span>
+      <span class="badge" id="ctxHint">Tip: add notes & addons</span>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; min-width:min(520px,100%)">
+      <input id="search" class="input" placeholder="Search dishes… (e.g., dosa, biryani, paneer)" aria-label="Search menu">
+      <button class="btn" id="openFilters">Filters</button>
+    </div>
+  </div>
+
+  <div class="pillbar" style="margin-top:12px" id="catBar"></div>
+
+  <div class="menu-layout">
+    <section>
+      <div class="items" id="items"></div>
+      <div style="height:70px"></div>
+    </section>
+
+    <aside class="aside">
+      <div class="card pad">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+          <div>
+            <div class="h3">Your cart</div>
+            <div class="smallmuted" id="cartMeta">—</div>
+          </div>
+          <a class="btn small" href="cart.html">Open</a>
+        </div>
+        <div class="cart-list" id="cartList"></div>
+        <div class="sep"></div>
+        <div id="totals"></div>
+        <div style="display:flex; gap:10px; margin-top:12px">
+          <button class="btn full primary" id="goCart">Checkout</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<div class="sticky-cart" id="stickyCart">
+  <div class="inner">
+    <div>
+      <div style="font-weight:900" id="stickyCount">0 items</div>
+      <div class="smallmuted" id="stickyTotal">₹0</div>
+    </div>
+    <a class="btn primary" href="cart.html">View cart</a>
+  </div>
+</div>
+
+<div class="modal" id="filtersModal" aria-hidden="true">
+  <div class="sheet">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+      <div class="h3">Filters</div>
+      <button class="btn small" id="closeFilters">Close</button>
+    </div>
+    <div class="sep"></div>
+    <div class="grid">
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">Veg only</div>
+          <div class="smallmuted">Show only vegetarian dishes.</div>
+        </div>
+        <input type="checkbox" id="fVeg">
+      </label>
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">Bestsellers</div>
+          <div class="smallmuted">Most ordered items.</div>
+        </div>
+        <input type="checkbox" id="fBest">
+      </label>
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">Spicy</div>
+          <div class="smallmuted">For spice lovers.</div>
+        </div>
+        <input type="checkbox" id="fSpicy">
+      </label>
+    </div>
+    <div class="sep"></div>
+    <button class="btn primary full" id="applyFilters">Apply</button>
+  </div>
+</div>
+
+<div class="modal" id="notesModal" aria-hidden="true">
+  <div class="sheet">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+      <div>
+        <div class="h3" id="notesTitle">Customize</div>
+        <div class="smallmuted">Add-ons and notes (optional)</div>
+      </div>
+      <button class="btn small" id="closeNotes">Close</button>
+    </div>
+    <div class="sep"></div>
+
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">Extra cheese</div>
+          <div class="smallmuted">+ ₹20</div>
+        </div>
+        <input type="checkbox" data-addon="Extra cheese" data-addonprice="20">
+      </label>
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">Extra spice</div>
+          <div class="smallmuted">+ ₹10</div>
+        </div>
+        <input type="checkbox" data-addon="Extra spice" data-addonprice="10">
+      </label>
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">No onion</div>
+          <div class="smallmuted">Preference</div>
+        </div>
+        <input type="checkbox" data-addon="No onion" data-addonprice="0">
+      </label>
+      <label class="card pad" style="display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer">
+        <div>
+          <div style="font-weight:900">No garlic</div>
+          <div class="smallmuted">Preference</div>
+        </div>
+        <input type="checkbox" data-addon="No garlic" data-addonprice="0">
+      </label>
+    </div>
+
+    <div class="sep"></div>
+
+    <label class="smallmuted" for="notesText">Special instructions</label>
+    <textarea id="notesText" class="input" style="min-height:110px; resize:vertical" placeholder="Example: medium spice, less oil, pack separately…"></textarea>
+
+    <div style="display:flex; gap:10px; margin-top:12px">
+      <button class="btn full" id="addOnce">Add 1 to cart</button>
+      <button class="btn full primary" id="addAndGo">Add & open cart</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/menu.js"></script>
+</body>
+</html>

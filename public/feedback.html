@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feedback — FoodieQR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/feedback.css">
+
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="nav-left">
+      <a href="index.html"><img src="assets/logo.svg" alt="FoodieQR" height="30"></a>
+      <span class="badge">Feedback</span>
+    </div>
+    <div class="nav-links" id="topNavLinks">
+            <a data-nav="scan" href="scan.html">Scan</a>
+<a data-nav="track" href="track.html">Track</a>
+      <a data-nav="menu" href="menu.html?hotel=hotel-a&table=01">Menu</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="wrap">
+    <section class="card pad">
+      <h1 class="h2" style="font-family:'Playfair Display',serif">Rate your experience</h1>
+      <div class="smallmuted" id="ctx">—</div>
+      <div class="sep"></div>
+
+      <div class="h3">Your rating</div>
+      <div class="stars" id="stars" aria-label="Star rating"></div>
+      <div class="smallmuted" id="ratingLabel" style="margin-top:8px">Select stars</div>
+
+      <div class="sep"></div>
+
+      <label class="smallmuted" for="comment">Comment (optional)</label>
+      <textarea id="comment" class="input" style="min-height:140px; resize:vertical" placeholder="What did you love? What can be improved?"></textarea>
+
+      <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap">
+        <button class="btn primary" id="submit">Submit feedback</button>
+        <a class="btn" href="track.html">Back</a>
+      </div>
+
+      <div class="sep"></div>
+      <div class="success" id="success">
+        <div class="h3">Thank you! 🎉</div>
+        <div class="smallmuted">Your feedback has been saved (demo). Want another order?</div>
+        <div class="sep"></div>
+        <a class="btn primary" id="orderAgain" href="hotel.html?hotel=hotel-a&table=01">Order again</a>
+      </div>
+    </section>
+
+    <aside class="card pad">
+      <div class="h3">Order summary</div>
+      <div class="sep"></div>
+      <div id="summary" class="smallmuted">—</div>
+    </aside>
+  </div>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script defer src="js/app-state.js"></script>
+  <script defer src="js/helpers.js"></script>
+  <script defer src="js/feedback.js"></script>
+</body>
+</html>
